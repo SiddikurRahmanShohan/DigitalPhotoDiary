@@ -39,7 +39,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.importanceLabel = new System.Windows.Forms.Label();
             this.lowRadioButton = new System.Windows.Forms.RadioButton();
             this.modRadioButton = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.highRadioButton = new System.Windows.Forms.RadioButton();
             this.backButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -142,17 +142,17 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.modRadioButton.Text = "Modarate";
             this.modRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // highRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(373, 286);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 24);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "High";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.highRadioButton.AutoSize = true;
+            this.highRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.highRadioButton.Location = new System.Drawing.Point(373, 286);
+            this.highRadioButton.Name = "highRadioButton";
+            this.highRadioButton.Size = new System.Drawing.Size(65, 24);
+            this.highRadioButton.TabIndex = 10;
+            this.highRadioButton.TabStop = true;
+            this.highRadioButton.Text = "High";
+            this.highRadioButton.UseVisualStyleBackColor = true;
             // 
             // backButton
             // 
@@ -171,7 +171,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 471);
             this.Controls.Add(this.backButton);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.highRadioButton);
             this.Controls.Add(this.modRadioButton);
             this.Controls.Add(this.lowRadioButton);
             this.Controls.Add(this.importanceLabel);
@@ -203,7 +203,7 @@ namespace DigitalPhotoDiary.PresentationLayer
         private System.Windows.Forms.Label importanceLabel;
         private System.Windows.Forms.RadioButton lowRadioButton;
         private System.Windows.Forms.RadioButton modRadioButton;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton highRadioButton;
         private System.Windows.Forms.Button backButton;
     }
 }

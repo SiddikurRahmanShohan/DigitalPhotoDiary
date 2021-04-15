@@ -16,6 +16,7 @@ namespace DigitalPhotoDiary.PresentationLayer
         public RegistrationPanel()
         {
             InitializeComponent();
+            registerButton.Enabled = false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace DigitalPhotoDiary.PresentationLayer
                 else {
                     UserService userService = new UserService();
                     int result =userService.AddNewUser(nameTextBox.Text, userNameTextBox.Text, passwordTextBox.Text);
-                    if (result > 1)
+                    if (result > 0)
                     {
                         MessageBox.Show("You have been Registerd!");
                         this.Hide();

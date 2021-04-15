@@ -88,9 +88,9 @@ namespace DigitalPhotoDiary.PresentationLayer
             // RegisterButton
             // 
             this.RegisterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterButton.Location = new System.Drawing.Point(162, 344);
+            this.RegisterButton.Location = new System.Drawing.Point(118, 346);
             this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(221, 32);
+            this.RegisterButton.Size = new System.Drawing.Size(296, 39);
             this.RegisterButton.TabIndex = 6;
             this.RegisterButton.Text = "Don\'t Have Account?";
             this.RegisterButton.UseVisualStyleBackColor = true;

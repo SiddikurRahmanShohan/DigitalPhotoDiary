@@ -16,6 +16,8 @@ namespace DigitalPhotoDiary.PresentationLayer
         public CreateEventPanel(int userId, string userName)
         {
             InitializeComponent();
+            userIdLabel.Text = Convert.ToString(userId);
+            userNameLabel.Text = userName;
         }
 
         private void CreateEventPanel_FormClosing(object sender, FormClosingEventArgs e)
@@ -31,30 +33,34 @@ namespace DigitalPhotoDiary.PresentationLayer
                 MessageBox.Show("Name can not be empty");
             }
 
-            else if (!highRadioButton.Checked || !lowRadioButton.Checked || !modRadioButton.Checked)
+            else if (!highRadioButton.Checked && !lowRadioButton.Checked && !modRadioButton.Checked)
             {
                 MessageBox.Show("Set Importance");
             }
             else
             {
+                if (lowRadioButton.Checked) { importance = 1; } else if (modRadioButton.Checked) { importance = 2; } else { importance = 3; }
 
                 EventsService eventService = new EventsService();
-                int result = userService.AddNewUser(nameTextBox.Text, userNameTextBox.Text, passwordTextBox.Text);
-                if (result > 1)
+                string modDate = DateTime.Now.ToString("u");
+                int result = eventService.AddNewEvent(eventNameTextBox.Text, dateTimePicker.Text, modDate, importance,Convert.ToInt32(userIdLabel.Text));
+                if (result > 0)
                 {
-                    MessageBox.Show("You have been Registerd!");
+                    MessageBox.Show("Events Added!");
                     this.Hide();
-                    LoginPanel loginPanel = new LoginPanel();
-                    loginPanel.Show();
+                    HomePanel homePanel = new HomePanel(Convert.ToInt32(userIdLabel.Text), userNameLabel.Text);
+                    homePanel.Show();
                 }
-                else { MessageBox.Show("Registration Error!"); }
+                else { MessageBox.Show("Error!"); }
             }
         }
-    }
+    
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            HomePanel homePanel = new HomePanel(Convert.ToInt32(userIdLabel.Text), userNameLabel.Text);
+            homePanel.Show();
         }
     }
 }
