@@ -33,8 +33,8 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.passwordLabel = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.registrationLabel = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
+            this.RegisterButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // userNameLabel
@@ -74,21 +74,10 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.passwordTextBox.Size = new System.Drawing.Size(198, 30);
             this.passwordTextBox.TabIndex = 3;
             // 
-            // registrationLabel
-            // 
-            this.registrationLabel.AutoSize = true;
-            this.registrationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registrationLabel.Location = new System.Drawing.Point(174, 362);
-            this.registrationLabel.Name = "registrationLabel";
-            this.registrationLabel.Size = new System.Drawing.Size(187, 20);
-            this.registrationLabel.TabIndex = 4;
-            this.registrationLabel.Text = "Don\'t Have Account?";
-            this.registrationLabel.Click += new System.EventHandler(this.registrationLabel_Click);
-            // 
             // loginButton
             // 
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Location = new System.Drawing.Point(216, 241);
+            this.loginButton.Location = new System.Drawing.Point(226, 243);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(102, 39);
             this.loginButton.TabIndex = 5;
@@ -96,13 +85,24 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
+            // RegisterButton
+            // 
+            this.RegisterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegisterButton.Location = new System.Drawing.Point(162, 344);
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(221, 32);
+            this.RegisterButton.TabIndex = 6;
+            this.RegisterButton.Text = "Don\'t Have Account?";
+            this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            // 
             // LoginPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(531, 450);
+            this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.registrationLabel);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.passwordLabel);
@@ -111,6 +111,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginPanel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginPanel_FormClosing);
+            this.Load += new System.EventHandler(this.LoginPanel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,7 +123,7 @@ namespace DigitalPhotoDiary.PresentationLayer
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.Label registrationLabel;
         private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Button RegisterButton;
     }
 }

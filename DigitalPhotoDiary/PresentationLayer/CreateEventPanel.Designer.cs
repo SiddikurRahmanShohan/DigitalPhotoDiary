@@ -29,137 +29,159 @@ namespace DigitalPhotoDiary.PresentationLayer
         /// </summary>
         private void InitializeComponent()
         {
-            this.eventNameLabel = new System.Windows.Forms.Label();
-            this.dateLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.userNameLabel = new System.Windows.Forms.Label();
+            this.userIdLabel = new System.Windows.Forms.Label();
+            this.eventLabel = new System.Windows.Forms.Label();
+            this.eventDateLabel = new System.Windows.Forms.Label();
             this.eventNameTextBox = new System.Windows.Forms.TextBox();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.highRadioButton = new System.Windows.Forms.RadioButton();
-            this.moderateRadioButton = new System.Windows.Forms.RadioButton();
+            this.createButton = new System.Windows.Forms.Button();
+            this.importanceLabel = new System.Windows.Forms.Label();
             this.lowRadioButton = new System.Windows.Forms.RadioButton();
-            this.addEventButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.modRadioButton = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.backButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // eventNameLabel
+            // userNameLabel
             // 
-            this.eventNameLabel.AutoSize = true;
-            this.eventNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventNameLabel.Location = new System.Drawing.Point(62, 60);
-            this.eventNameLabel.Name = "eventNameLabel";
-            this.eventNameLabel.Size = new System.Drawing.Size(75, 25);
-            this.eventNameLabel.TabIndex = 0;
-            this.eventNameLabel.Text = "Name:";
+            this.userNameLabel.AutoSize = true;
+            this.userNameLabel.Location = new System.Drawing.Point(187, 24);
+            this.userNameLabel.Name = "userNameLabel";
+            this.userNameLabel.Size = new System.Drawing.Size(46, 17);
+            this.userNameLabel.TabIndex = 0;
+            this.userNameLabel.Text = "label1";
             // 
-            // dateLabel
+            // userIdLabel
             // 
-            this.dateLabel.AutoSize = true;
-            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Location = new System.Drawing.Point(62, 120);
-            this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(64, 25);
-            this.dateLabel.TabIndex = 1;
-            this.dateLabel.Text = "Date:";
+            this.userIdLabel.AutoSize = true;
+            this.userIdLabel.Location = new System.Drawing.Point(277, 24);
+            this.userIdLabel.Name = "userIdLabel";
+            this.userIdLabel.Size = new System.Drawing.Size(46, 17);
+            this.userIdLabel.TabIndex = 1;
+            this.userIdLabel.Text = "label2";
             // 
-            // label1
+            // eventLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(62, 185);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Importance:";
+            this.eventLabel.AutoSize = true;
+            this.eventLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventLabel.Location = new System.Drawing.Point(87, 107);
+            this.eventLabel.Name = "eventLabel";
+            this.eventLabel.Size = new System.Drawing.Size(74, 25);
+            this.eventLabel.TabIndex = 2;
+            this.eventLabel.Text = "Event:";
+            // 
+            // eventDateLabel
+            // 
+            this.eventDateLabel.AutoSize = true;
+            this.eventDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventDateLabel.Location = new System.Drawing.Point(87, 180);
+            this.eventDateLabel.Name = "eventDateLabel";
+            this.eventDateLabel.Size = new System.Drawing.Size(64, 25);
+            this.eventDateLabel.TabIndex = 3;
+            this.eventDateLabel.Text = "Date:";
             // 
             // eventNameTextBox
             // 
-            this.eventNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventNameTextBox.Location = new System.Drawing.Point(138, 57);
+            this.eventNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventNameTextBox.Location = new System.Drawing.Point(176, 106);
             this.eventNameTextBox.Name = "eventNameTextBox";
-            this.eventNameTextBox.Size = new System.Drawing.Size(189, 30);
-            this.eventNameTextBox.TabIndex = 3;
+            this.eventNameTextBox.Size = new System.Drawing.Size(242, 28);
+            this.eventNameTextBox.TabIndex = 4;
             // 
             // dateTimePicker
             // 
             this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.Location = new System.Drawing.Point(138, 119);
+            this.dateTimePicker.Location = new System.Drawing.Point(176, 179);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(189, 27);
-            this.dateTimePicker.TabIndex = 4;
+            this.dateTimePicker.Size = new System.Drawing.Size(242, 27);
+            this.dateTimePicker.TabIndex = 5;
             // 
-            // highRadioButton
+            // createButton
             // 
-            this.highRadioButton.AutoSize = true;
-            this.highRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.highRadioButton.Location = new System.Drawing.Point(204, 184);
-            this.highRadioButton.Name = "highRadioButton";
-            this.highRadioButton.Size = new System.Drawing.Size(71, 28);
-            this.highRadioButton.TabIndex = 5;
-            this.highRadioButton.TabStop = true;
-            this.highRadioButton.Text = "High";
-            this.highRadioButton.UseVisualStyleBackColor = true;
+            this.createButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createButton.Location = new System.Drawing.Point(214, 401);
+            this.createButton.Name = "createButton";
+            this.createButton.Size = new System.Drawing.Size(97, 41);
+            this.createButton.TabIndex = 6;
+            this.createButton.Text = "Create";
+            this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
-            // moderateRadioButton
+            // importanceLabel
             // 
-            this.moderateRadioButton.AutoSize = true;
-            this.moderateRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moderateRadioButton.Location = new System.Drawing.Point(291, 184);
-            this.moderateRadioButton.Name = "moderateRadioButton";
-            this.moderateRadioButton.Size = new System.Drawing.Size(111, 28);
-            this.moderateRadioButton.TabIndex = 6;
-            this.moderateRadioButton.TabStop = true;
-            this.moderateRadioButton.Text = "Moderate";
-            this.moderateRadioButton.UseVisualStyleBackColor = true;
+            this.importanceLabel.AutoSize = true;
+            this.importanceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importanceLabel.Location = new System.Drawing.Point(25, 281);
+            this.importanceLabel.Name = "importanceLabel";
+            this.importanceLabel.Size = new System.Drawing.Size(126, 25);
+            this.importanceLabel.TabIndex = 7;
+            this.importanceLabel.Text = "Importance:";
             // 
             // lowRadioButton
             // 
             this.lowRadioButton.AutoSize = true;
-            this.lowRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lowRadioButton.Location = new System.Drawing.Point(417, 184);
+            this.lowRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lowRadioButton.Location = new System.Drawing.Point(176, 286);
             this.lowRadioButton.Name = "lowRadioButton";
-            this.lowRadioButton.Size = new System.Drawing.Size(66, 28);
-            this.lowRadioButton.TabIndex = 7;
+            this.lowRadioButton.Size = new System.Drawing.Size(61, 24);
+            this.lowRadioButton.TabIndex = 8;
             this.lowRadioButton.TabStop = true;
             this.lowRadioButton.Text = "Low";
             this.lowRadioButton.UseVisualStyleBackColor = true;
             // 
-            // addEventButton
+            // modRadioButton
             // 
-            this.addEventButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEventButton.Location = new System.Drawing.Point(194, 243);
-            this.addEventButton.Name = "addEventButton";
-            this.addEventButton.Size = new System.Drawing.Size(98, 43);
-            this.addEventButton.TabIndex = 8;
-            this.addEventButton.Text = "Create";
-            this.addEventButton.UseVisualStyleBackColor = true;
-            this.addEventButton.Click += new System.EventHandler(this.addEventButton_Click);
+            this.modRadioButton.AutoSize = true;
+            this.modRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modRadioButton.Location = new System.Drawing.Point(253, 286);
+            this.modRadioButton.Name = "modRadioButton";
+            this.modRadioButton.Size = new System.Drawing.Size(100, 24);
+            this.modRadioButton.TabIndex = 9;
+            this.modRadioButton.TabStop = true;
+            this.modRadioButton.Text = "Modarate";
+            this.modRadioButton.UseVisualStyleBackColor = true;
             // 
-            // cancelButton
+            // radioButton1
             // 
-            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelButton.Location = new System.Drawing.Point(366, 249);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(77, 29);
-            this.cancelButton.TabIndex = 9;
-            this.cancelButton.Text = "Back";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(373, 286);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(65, 24);
+            this.radioButton1.TabIndex = 10;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "High";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // backButton
+            // 
+            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.Location = new System.Drawing.Point(387, 405);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(76, 34);
+            this.backButton.TabIndex = 11;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // CreateEventPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 322);
-            this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.addEventButton);
+            this.ClientSize = new System.Drawing.Size(526, 471);
+            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.modRadioButton);
             this.Controls.Add(this.lowRadioButton);
-            this.Controls.Add(this.moderateRadioButton);
-            this.Controls.Add(this.highRadioButton);
+            this.Controls.Add(this.importanceLabel);
+            this.Controls.Add(this.createButton);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.eventNameTextBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateLabel);
-            this.Controls.Add(this.eventNameLabel);
+            this.Controls.Add(this.eventDateLabel);
+            this.Controls.Add(this.eventLabel);
+            this.Controls.Add(this.userIdLabel);
+            this.Controls.Add(this.userNameLabel);
             this.Name = "CreateEventPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateEventPanel";
@@ -171,15 +193,17 @@ namespace DigitalPhotoDiary.PresentationLayer
 
         #endregion
 
-        private System.Windows.Forms.Label eventNameLabel;
-        private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label userNameLabel;
+        private System.Windows.Forms.Label userIdLabel;
+        private System.Windows.Forms.Label eventLabel;
+        private System.Windows.Forms.Label eventDateLabel;
         private System.Windows.Forms.TextBox eventNameTextBox;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.RadioButton highRadioButton;
-        private System.Windows.Forms.RadioButton moderateRadioButton;
+        private System.Windows.Forms.Button createButton;
+        private System.Windows.Forms.Label importanceLabel;
         private System.Windows.Forms.RadioButton lowRadioButton;
-        private System.Windows.Forms.Button addEventButton;
-        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.RadioButton modRadioButton;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button backButton;
     }
 }

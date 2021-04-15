@@ -10,8 +10,8 @@ namespace DigitalPhotoDiary.DataAccessLayer
 {
     class UserDataAccess: DataAccess
     {
-        public User GetUser(int id, string password) {
-            string sql = "SELECT Username fROM Users WHERE UserId=" + id +" AND Password='"+password+"'";
+        public User GetUser(string name, string password) {
+            string sql = "SELECT * fROM Users WHERE Name='" + name +"' AND Password='"+password+"'";
             SqlDataReader reader = this.GetData(sql);
             if (reader.Read()) {
                 User user = new User();

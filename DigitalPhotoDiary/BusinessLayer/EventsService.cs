@@ -23,10 +23,10 @@ namespace DigitalPhotoDiary.BusinessLayer
             return this.eventDataAccess.GetEvents(id);
         }
 
-        public UserEvent GetUserEvent(string eventName, int userId)
+        public UserEvent GetUserEvent(string eventName, int eventId)
         {
 
-            return this.eventDataAccess.GetEvent(eventName, userId);
+            return this.eventDataAccess.GetEvent(eventName, eventId);
         }
 
         public int AddNewEvent(string name, string eventDate, string modificationDate, int importance, int userId)

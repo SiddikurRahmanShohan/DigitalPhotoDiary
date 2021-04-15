@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DigitalPhotoDiary.BusinessLayer;
+using DigitalPhotoDiary.DataAccessLayer.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,11 @@ namespace DigitalPhotoDiary.PresentationLayer
 {
     public partial class HomePanel : Form
     {
-        public HomePanel()
+        public HomePanel(int userId, string userName)
         {
             InitializeComponent();
+            welcomeLabel.Text = userName;
+            userIdLabel.Text = Convert.ToString(userId);
         }
 
         private void HomePanel_FormClosing(object sender, FormClosingEventArgs e)
@@ -24,15 +28,32 @@ namespace DigitalPhotoDiary.PresentationLayer
 
         private void goToButton_Click(object sender, EventArgs e)
         {
-            EventDisplayPanel eventDisplayPanel = new EventDisplayPanel();
-            this.Hide();
-            eventDisplayPanel.Show();
+            if (eventIdTextBox.Text == "")
+            {
+                MessageBox.Show("Please Enter the Event Id!");
+            }
+            else if (eventNameTextBox.Text == "")
+            {
+                MessageBox.Show("Please Enter the Event Name!");
+            }
+            else
+            {
+                EventsService eventsService = new EventsService();
+                UserEvent userEvent = eventsService.GetUserEvent(eventNameTextBox.Text, Convert.ToInt32(eventIdTextBox.Text));
+                if (userEvent != null) {
+
+                    EventDisplayPanel eventDisplayPanel = new EventDisplayPanel(userEvent.EventId, userEvent.EventName, userEvent.EventDate, userEvent.ModificationDate, userEvent.UserId, welcomeLabel.Text);
+                    this.Hide();
+                    eventDisplayPanel.Show();
+                }
+                else { MessageBox.Show("Something Went Worng!"); }
+            }
         }
 
 
         private void createEventButton_Click(object sender, EventArgs e)
         {
-            CreateEventPanel createEventPanel = new CreateEventPanel();
+            CreateEventPanel createEventPanel = new CreateEventPanel(Convert.ToInt32(userIdLabel.Text), welcomeLabel.Text);
             this.Hide();
             createEventPanel.Show();
 
@@ -43,6 +64,23 @@ namespace DigitalPhotoDiary.PresentationLayer
             LoginPanel loginPanel = new LoginPanel();
             this.Hide();
             loginPanel.Show();
+        }
+
+        void UpdateListOfEvents() {
+            EventsService eventsService = new EventsService();
+            eventsDataGridView.DataSource = eventsService.GetEvents(Convert.ToInt32(userIdLabel.Text));
+        }
+        private void HomePanel_Load(object sender, EventArgs e)
+        {
+            EventsService eventsService = new EventsService();
+            eventsDataGridView.DataSource = eventsService.GetEvents(Convert.ToInt32(userIdLabel.Text));
+
+        }
+
+        private void eventsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            eventIdTextBox.Text = eventsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            eventNameTextBox.Text = eventsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DigitalPhotoDiary.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace DigitalPhotoDiary.PresentationLayer
 {
     public partial class CreateEventPanel : Form
     {
-        public CreateEventPanel()
+        public CreateEventPanel(int userId, string userName)
         {
             InitializeComponent();
         }
@@ -22,16 +23,38 @@ namespace DigitalPhotoDiary.PresentationLayer
             Application.Exit();
         }
 
-        private void addEventButton_Click(object sender, EventArgs e)
+        private void createButton_Click(object sender, EventArgs e)
         {
+            int importance = 0;
+            if (eventNameTextBox.Text == "")
+            {
+                MessageBox.Show("Name can not be empty");
+            }
 
+            else if (!highRadioButton.Checked || !lowRadioButton.Checked || !modRadioButton.Checked)
+            {
+                MessageBox.Show("Set Importance");
+            }
+            else
+            {
+
+                EventsService eventService = new EventsService();
+                int result = userService.AddNewUser(nameTextBox.Text, userNameTextBox.Text, passwordTextBox.Text);
+                if (result > 1)
+                {
+                    MessageBox.Show("You have been Registerd!");
+                    this.Hide();
+                    LoginPanel loginPanel = new LoginPanel();
+                    loginPanel.Show();
+                }
+                else { MessageBox.Show("Registration Error!"); }
+            }
         }
+    }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void backButton_Click(object sender, EventArgs e)
         {
-            HomePanel homePanel = new HomePanel();
-            this.Hide();
-            homePanel.Show();
+            
         }
     }
 }

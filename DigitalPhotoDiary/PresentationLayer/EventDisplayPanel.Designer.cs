@@ -36,15 +36,18 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.storyGroypBox = new System.Windows.Forms.GroupBox();
+            this.storyLabel1 = new System.Windows.Forms.Label();
             this.storyGroupBox = new System.Windows.Forms.GroupBox();
+            this.storyLabel2 = new System.Windows.Forms.Label();
             this.addPhotoButton1 = new System.Windows.Forms.Button();
             this.addPhotoButton2 = new System.Windows.Forms.Button();
             this.addStoryButton1 = new System.Windows.Forms.Button();
             this.addStoryButton2 = new System.Windows.Forms.Button();
             this.storyTextBox1 = new System.Windows.Forms.TextBox();
             this.storyTextBox2 = new System.Windows.Forms.TextBox();
-            this.storyLabel1 = new System.Windows.Forms.Label();
-            this.storyLabel2 = new System.Windows.Forms.Label();
+            this.userNameLabel = new System.Windows.Forms.Label();
+            this.userIdLabel = new System.Windows.Forms.Label();
+            this.eventIdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.storyGroypBox.SuspendLayout();
@@ -118,6 +121,16 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.storyGroypBox.TabStop = false;
             this.storyGroypBox.Text = "Story:";
             // 
+            // storyLabel1
+            // 
+            this.storyLabel1.AutoSize = true;
+            this.storyLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storyLabel1.Location = new System.Drawing.Point(6, 18);
+            this.storyLabel1.Name = "storyLabel1";
+            this.storyLabel1.Size = new System.Drawing.Size(164, 18);
+            this.storyLabel1.TabIndex = 1;
+            this.storyLabel1.Text = "Your Story Will Be Here";
+            // 
             // storyGroupBox
             // 
             this.storyGroupBox.Controls.Add(this.storyLabel2);
@@ -127,6 +140,16 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.storyGroupBox.TabIndex = 7;
             this.storyGroupBox.TabStop = false;
             this.storyGroupBox.Text = "Story:";
+            // 
+            // storyLabel2
+            // 
+            this.storyLabel2.AutoSize = true;
+            this.storyLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storyLabel2.Location = new System.Drawing.Point(6, 18);
+            this.storyLabel2.Name = "storyLabel2";
+            this.storyLabel2.Size = new System.Drawing.Size(168, 18);
+            this.storyLabel2.TabIndex = 2;
+            this.storyLabel2.Text = "Your Story Will Be Here.";
             // 
             // addPhotoButton1
             // 
@@ -182,31 +205,44 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.storyTextBox2.Size = new System.Drawing.Size(202, 22);
             this.storyTextBox2.TabIndex = 13;
             // 
-            // storyLabel1
+            // userNameLabel
             // 
-            this.storyLabel1.AutoSize = true;
-            this.storyLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storyLabel1.Location = new System.Drawing.Point(6, 18);
-            this.storyLabel1.Name = "storyLabel1";
-            this.storyLabel1.Size = new System.Drawing.Size(164, 18);
-            this.storyLabel1.TabIndex = 1;
-            this.storyLabel1.Text = "Your Story Will Be Here";
+            this.userNameLabel.AutoSize = true;
+            this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameLabel.Location = new System.Drawing.Point(408, 9);
+            this.userNameLabel.Name = "userNameLabel";
+            this.userNameLabel.Size = new System.Drawing.Size(94, 20);
+            this.userNameLabel.TabIndex = 14;
+            this.userNameLabel.Text = "Username";
             // 
-            // storyLabel2
+            // userIdLabel
             // 
-            this.storyLabel2.AutoSize = true;
-            this.storyLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storyLabel2.Location = new System.Drawing.Point(6, 18);
-            this.storyLabel2.Name = "storyLabel2";
-            this.storyLabel2.Size = new System.Drawing.Size(168, 18);
-            this.storyLabel2.TabIndex = 2;
-            this.storyLabel2.Text = "Your Story Will Be Here.";
+            this.userIdLabel.AutoSize = true;
+            this.userIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userIdLabel.Location = new System.Drawing.Point(517, 9);
+            this.userIdLabel.Name = "userIdLabel";
+            this.userIdLabel.Size = new System.Drawing.Size(94, 20);
+            this.userIdLabel.TabIndex = 15;
+            this.userIdLabel.Text = "Username";
+            // 
+            // eventIdLabel
+            // 
+            this.eventIdLabel.AutoSize = true;
+            this.eventIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventIdLabel.Location = new System.Drawing.Point(258, 50);
+            this.eventIdLabel.Name = "eventIdLabel";
+            this.eventIdLabel.Size = new System.Drawing.Size(59, 20);
+            this.eventIdLabel.TabIndex = 16;
+            this.eventIdLabel.Text = "label1";
             // 
             // EventDisplayPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 548);
+            this.Controls.Add(this.eventIdLabel);
+            this.Controls.Add(this.userIdLabel);
+            this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.storyTextBox2);
             this.Controls.Add(this.storyTextBox1);
             this.Controls.Add(this.addStoryButton2);
@@ -225,6 +261,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventDisplayPanel";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EventDisplayPanel_FormClosed);
+            this.Load += new System.EventHandler(this.EventDisplayPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.storyGroypBox.ResumeLayout(false);
@@ -254,5 +291,8 @@ namespace DigitalPhotoDiary.PresentationLayer
         private System.Windows.Forms.TextBox storyTextBox2;
         private System.Windows.Forms.Label storyLabel1;
         private System.Windows.Forms.Label storyLabel2;
+        private System.Windows.Forms.Label userNameLabel;
+        private System.Windows.Forms.Label userIdLabel;
+        private System.Windows.Forms.Label eventIdLabel;
     }
 }

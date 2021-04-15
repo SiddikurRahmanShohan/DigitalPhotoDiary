@@ -12,9 +12,15 @@ namespace DigitalPhotoDiary.PresentationLayer
 {
     public partial class EventDisplayPanel : Form
     {
-        public EventDisplayPanel()
+        public EventDisplayPanel(int eventId, string name, string date, string modDate, int userId, string userName)
         {
             InitializeComponent();
+            userNameLabel.Text = userName;
+            userIdLabel.Text = Convert.ToString(userId);
+            eventIdLabel.Text = Convert.ToString(eventId);
+            eventNameLabel.Text = name;
+            modificationDateLabel.Text = modDate;
+            dateLabel.Text = date;
         }
 
         private void EventDisplayPanel_FormClosed(object sender, FormClosedEventArgs e)
@@ -24,9 +30,14 @@ namespace DigitalPhotoDiary.PresentationLayer
 
         private void homeBackButton_Click(object sender, EventArgs e)
         {
-            HomePanel homePanel = new HomePanel();
+            HomePanel homePanel = new HomePanel(Convert.ToInt32(userIdLabel.Text), userNameLabel.Text);
             this.Hide();
             homePanel.Show();
+        }
+
+        private void EventDisplayPanel_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

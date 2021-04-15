@@ -37,9 +37,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.userNameLabel = new System.Windows.Forms.Label();
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.confirmPasswordLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.dobLabel = new System.Windows.Forms.Label();
+            this.confirmPasswordTextBox = new System.Windows.Forms.TextBox();
             this.termsCheckBox = new System.Windows.Forms.CheckBox();
             this.loginPanelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -47,7 +45,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // registerButton
             // 
             this.registerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerButton.Location = new System.Drawing.Point(223, 423);
+            this.registerButton.Location = new System.Drawing.Point(213, 377);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(102, 39);
             this.registerButton.TabIndex = 11;
@@ -120,48 +118,32 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.confirmPasswordLabel.TabIndex = 14;
             this.confirmPasswordLabel.Text = "Confirm Password:";
             // 
-            // textBox1
+            // confirmPasswordTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(256, 201);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(198, 30);
-            this.textBox1.TabIndex = 15;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // dateTimePicker
-            // 
-            this.dateTimePicker.Location = new System.Drawing.Point(256, 267);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(198, 22);
-            this.dateTimePicker.TabIndex = 16;
-            // 
-            // dobLabel
-            // 
-            this.dobLabel.AutoSize = true;
-            this.dobLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dobLabel.Location = new System.Drawing.Point(100, 265);
-            this.dobLabel.Name = "dobLabel";
-            this.dobLabel.Size = new System.Drawing.Size(138, 25);
-            this.dobLabel.TabIndex = 17;
-            this.dobLabel.Text = "Date of Birth:";
+            this.confirmPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmPasswordTextBox.Location = new System.Drawing.Point(256, 201);
+            this.confirmPasswordTextBox.Name = "confirmPasswordTextBox";
+            this.confirmPasswordTextBox.PasswordChar = '*';
+            this.confirmPasswordTextBox.Size = new System.Drawing.Size(198, 30);
+            this.confirmPasswordTextBox.TabIndex = 15;
+            this.confirmPasswordTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // termsCheckBox
             // 
             this.termsCheckBox.AutoSize = true;
             this.termsCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.termsCheckBox.Location = new System.Drawing.Point(168, 355);
+            this.termsCheckBox.Location = new System.Drawing.Point(168, 283);
             this.termsCheckBox.Name = "termsCheckBox";
             this.termsCheckBox.Size = new System.Drawing.Size(236, 21);
             this.termsCheckBox.TabIndex = 18;
             this.termsCheckBox.Text = "I agree Terms and Condition";
             this.termsCheckBox.UseVisualStyleBackColor = true;
+            this.termsCheckBox.CheckedChanged += new System.EventHandler(this.termsCheckBox_CheckedChanged);
             // 
             // loginPanelButton
             // 
             this.loginPanelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginPanelButton.Location = new System.Drawing.Point(418, 428);
+            this.loginPanelButton.Location = new System.Drawing.Point(417, 382);
             this.loginPanelButton.Name = "loginPanelButton";
             this.loginPanelButton.Size = new System.Drawing.Size(86, 30);
             this.loginPanelButton.TabIndex = 19;
@@ -173,12 +155,10 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 520);
+            this.ClientSize = new System.Drawing.Size(553, 464);
             this.Controls.Add(this.loginPanelButton);
             this.Controls.Add(this.termsCheckBox);
-            this.Controls.Add(this.dobLabel);
-            this.Controls.Add(this.dateTimePicker);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.confirmPasswordTextBox);
             this.Controls.Add(this.confirmPasswordLabel);
             this.Controls.Add(this.userNameTextBox);
             this.Controls.Add(this.userNameLabel);
@@ -191,6 +171,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistrationPanel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrationPanel_FormClosing);
+            this.Load += new System.EventHandler(this.RegistrationPanel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,9 +187,7 @@ namespace DigitalPhotoDiary.PresentationLayer
         private System.Windows.Forms.Label userNameLabel;
         private System.Windows.Forms.TextBox userNameTextBox;
         private System.Windows.Forms.Label confirmPasswordLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.Label dobLabel;
+        private System.Windows.Forms.TextBox confirmPasswordTextBox;
         private System.Windows.Forms.CheckBox termsCheckBox;
         private System.Windows.Forms.Button loginPanelButton;
     }

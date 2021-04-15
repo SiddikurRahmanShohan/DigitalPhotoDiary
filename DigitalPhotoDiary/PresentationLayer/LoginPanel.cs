@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DigitalPhotoDiary.BusinessLayer;
+using DigitalPhotoDiary.DataAccessLayer.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,9 +33,38 @@ namespace DigitalPhotoDiary.PresentationLayer
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            HomePanel homePanel = new HomePanel();
+            if (nameTextBox.Text == "")
+            {
+                MessageBox.Show("Name can not be empty");
+            }
+            else if (passwordTextBox.Text == "")
+            {
+                MessageBox.Show("Password can not be empty");
+            }
+            else {
+
+                UserService userService = new UserService();
+                User user = userService.GetUser(nameTextBox.Text, passwordTextBox.Text);
+                if (user != null)
+                {
+                    HomePanel homePanel = new HomePanel(user.UserId, user.Username);
+                    this.Hide();
+                    homePanel.Show();
+                }
+                else { MessageBox.Show("Something Went Worng!"); }
+            }
+        }
+
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
+            RegistrationPanel registrationPanel = new RegistrationPanel();
             this.Hide();
-            homePanel.Show();
+            registrationPanel.Show();
+        }
+
+        private void LoginPanel_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

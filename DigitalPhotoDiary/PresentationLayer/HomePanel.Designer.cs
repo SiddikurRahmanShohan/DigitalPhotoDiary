@@ -32,19 +32,22 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.createEventButton = new System.Windows.Forms.Button();
             this.goToButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.eventsDataGridView = new System.Windows.Forms.DataGridView();
             this.overviewLabel = new System.Windows.Forms.Label();
-            this.selectEventLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.EventIdLabel = new System.Windows.Forms.Label();
+            this.eventIdTextBox = new System.Windows.Forms.TextBox();
             this.logoutButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.userIdLabel = new System.Windows.Forms.Label();
+            this.EventLabel = new System.Windows.Forms.Label();
+            this.eventNameTextBox = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.eventsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // welcomeLabel
             // 
             this.welcomeLabel.AutoSize = true;
             this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeLabel.Location = new System.Drawing.Point(167, 9);
+            this.welcomeLabel.Location = new System.Drawing.Point(196, 19);
             this.welcomeLabel.Name = "welcomeLabel";
             this.welcomeLabel.Size = new System.Drawing.Size(152, 18);
             this.welcomeLabel.TabIndex = 0;
@@ -53,7 +56,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // createEventButton
             // 
             this.createEventButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createEventButton.Location = new System.Drawing.Point(396, 163);
+            this.createEventButton.Location = new System.Drawing.Point(440, 157);
             this.createEventButton.Name = "createEventButton";
             this.createEventButton.Size = new System.Drawing.Size(86, 73);
             this.createEventButton.TabIndex = 1;
@@ -64,7 +67,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // goToButton
             // 
             this.goToButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.goToButton.Location = new System.Drawing.Point(396, 333);
+            this.goToButton.Location = new System.Drawing.Point(241, 419);
             this.goToButton.Name = "goToButton";
             this.goToButton.Size = new System.Drawing.Size(78, 32);
             this.goToButton.TabIndex = 4;
@@ -72,48 +75,49 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.goToButton.UseVisualStyleBackColor = true;
             this.goToButton.Click += new System.EventHandler(this.goToButton_Click);
             // 
-            // dataGridView1
+            // eventsDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(63, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(298, 178);
-            this.dataGridView1.TabIndex = 5;
+            this.eventsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.eventsDataGridView.Location = new System.Drawing.Point(63, 106);
+            this.eventsDataGridView.Name = "eventsDataGridView";
+            this.eventsDataGridView.RowHeadersWidth = 51;
+            this.eventsDataGridView.RowTemplate.Height = 24;
+            this.eventsDataGridView.Size = new System.Drawing.Size(332, 178);
+            this.eventsDataGridView.TabIndex = 5;
+            this.eventsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventsDataGridView_CellClick);
             // 
             // overviewLabel
             // 
             this.overviewLabel.AutoSize = true;
             this.overviewLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overviewLabel.Location = new System.Drawing.Point(132, 85);
+            this.overviewLabel.Location = new System.Drawing.Point(144, 85);
             this.overviewLabel.Name = "overviewLabel";
             this.overviewLabel.Size = new System.Drawing.Size(175, 18);
             this.overviewLabel.TabIndex = 6;
             this.overviewLabel.Text = "Your Available Events.";
             // 
-            // selectEventLabel
+            // EventIdLabel
             // 
-            this.selectEventLabel.AutoSize = true;
-            this.selectEventLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectEventLabel.Location = new System.Drawing.Point(32, 339);
-            this.selectEventLabel.Name = "selectEventLabel";
-            this.selectEventLabel.Size = new System.Drawing.Size(113, 20);
-            this.selectEventLabel.TabIndex = 7;
-            this.selectEventLabel.Text = "Enter Event:";
+            this.EventIdLabel.AutoSize = true;
+            this.EventIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventIdLabel.Location = new System.Drawing.Point(63, 321);
+            this.EventIdLabel.Name = "EventIdLabel";
+            this.EventIdLabel.Size = new System.Drawing.Size(83, 20);
+            this.EventIdLabel.TabIndex = 7;
+            this.EventIdLabel.Text = "Event Id:";
             // 
-            // textBox1
+            // eventIdTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(162, 336);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 27);
-            this.textBox1.TabIndex = 8;
+            this.eventIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventIdTextBox.Location = new System.Drawing.Point(162, 318);
+            this.eventIdTextBox.Name = "eventIdTextBox";
+            this.eventIdTextBox.Size = new System.Drawing.Size(233, 27);
+            this.eventIdTextBox.TabIndex = 8;
             // 
             // logoutButton
             // 
             this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutButton.Location = new System.Drawing.Point(216, 411);
+            this.logoutButton.Location = new System.Drawing.Point(229, 486);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(103, 42);
             this.logoutButton.TabIndex = 9;
@@ -121,16 +125,47 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.logoutButton.UseVisualStyleBackColor = true;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
+            // userIdLabel
+            // 
+            this.userIdLabel.AutoSize = true;
+            this.userIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userIdLabel.Location = new System.Drawing.Point(437, 19);
+            this.userIdLabel.Name = "userIdLabel";
+            this.userIdLabel.Size = new System.Drawing.Size(18, 18);
+            this.userIdLabel.TabIndex = 10;
+            this.userIdLabel.Text = "o";
+            // 
+            // EventLabel
+            // 
+            this.EventLabel.AutoSize = true;
+            this.EventLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventLabel.Location = new System.Drawing.Point(84, 363);
+            this.EventLabel.Name = "EventLabel";
+            this.EventLabel.Size = new System.Drawing.Size(62, 20);
+            this.EventLabel.TabIndex = 11;
+            this.EventLabel.Text = "Event:";
+            // 
+            // eventNameTextBox
+            // 
+            this.eventNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventNameTextBox.Location = new System.Drawing.Point(162, 360);
+            this.eventNameTextBox.Name = "eventNameTextBox";
+            this.eventNameTextBox.Size = new System.Drawing.Size(233, 27);
+            this.eventNameTextBox.TabIndex = 12;
+            // 
             // HomePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 501);
+            this.ClientSize = new System.Drawing.Size(573, 550);
+            this.Controls.Add(this.eventNameTextBox);
+            this.Controls.Add(this.EventLabel);
+            this.Controls.Add(this.userIdLabel);
             this.Controls.Add(this.logoutButton);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.selectEventLabel);
+            this.Controls.Add(this.eventIdTextBox);
+            this.Controls.Add(this.EventIdLabel);
             this.Controls.Add(this.overviewLabel);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.eventsDataGridView);
             this.Controls.Add(this.goToButton);
             this.Controls.Add(this.createEventButton);
             this.Controls.Add(this.welcomeLabel);
@@ -138,7 +173,8 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomePanel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HomePanel_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.HomePanel_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.eventsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,10 +185,13 @@ namespace DigitalPhotoDiary.PresentationLayer
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.Button createEventButton;
         private System.Windows.Forms.Button goToButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView eventsDataGridView;
         private System.Windows.Forms.Label overviewLabel;
-        private System.Windows.Forms.Label selectEventLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label EventIdLabel;
+        private System.Windows.Forms.TextBox eventIdTextBox;
         private System.Windows.Forms.Button logoutButton;
+        private System.Windows.Forms.Label userIdLabel;
+        private System.Windows.Forms.Label EventLabel;
+        private System.Windows.Forms.TextBox eventNameTextBox;
     }
 }

@@ -16,9 +16,9 @@ namespace DigitalPhotoDiary.BusinessLayer
             this.userDataAccess = new UserDataAccess();
         }
 
-        public User GetUser(int id, string password) {
+        public User GetUser(string name, string password) {
 
-            return this.userDataAccess.GetUser(id, password);
+            return this.userDataAccess.GetUser(name, password);
         }
 
         public int AddNewUser(string name, string userName, string password) {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DigitalPhotoDiary.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,36 @@ namespace DigitalPhotoDiary.PresentationLayer
 
         private void registerButton_Click(object sender, EventArgs e)
         {
+            if (nameTextBox.Text == "")
+            {
+                MessageBox.Show("Name can not be empty");
+            }
+            else if (userNameTextBox.Text == "")
+            {
+                MessageBox.Show("Username can not be empty");
+            }
+            else if (passwordTextBox.Text == "")
+            {
+                MessageBox.Show("Password can not be empty");
+            }
+            else {
+                if (passwordTextBox.Text != confirmPasswordTextBox.Text)
+                {
+                    MessageBox.Show("Password and confirm password does not match");
+                }
+                else {
+                    UserService userService = new UserService();
+                    int result =userService.AddNewUser(nameTextBox.Text, userNameTextBox.Text, passwordTextBox.Text);
+                    if (result > 1)
+                    {
+                        MessageBox.Show("You have been Registerd!");
+                        this.Hide();
+                        LoginPanel loginPanel = new LoginPanel();
+                        loginPanel.Show();
+                    }
+                    else { MessageBox.Show("Registration Error!"); }
+                }
+            }
 
         }
 
@@ -38,6 +69,21 @@ namespace DigitalPhotoDiary.PresentationLayer
             LoginPanel loginPanel = new LoginPanel();
             this.Hide();
             loginPanel.Show();
+        }
+
+        private void termsCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (termsCheckBox.Checked)
+            {
+                registerButton.Enabled = true;
+            }
+            else
+                registerButton.Enabled = false;
+        }
+
+        private void RegistrationPanel_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
