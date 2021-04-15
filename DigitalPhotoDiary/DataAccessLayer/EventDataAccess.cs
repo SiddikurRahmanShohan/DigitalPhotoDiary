@@ -26,9 +26,9 @@ namespace DigitalPhotoDiary.DataAccessLayer
             return events;
         }
 
-        public UserEvent GetEvent(string eventName, int id)
+        public UserEvent GetEvent(string eventName, int userId)
         {
-            string sql = "SELECT Name,EventDate,ModificationDate fROM Events WHERE  EventName ='"+eventName+"'AND UserId=" + id;
+            string sql = "SELECT Name,EventDate,ModificationDate fROM Events WHERE  EventName ='"+eventName+"'AND UserId=" + userId;
             SqlDataReader reader = this.GetData(sql);
             if (reader.Read())
             {
@@ -50,7 +50,7 @@ namespace DigitalPhotoDiary.DataAccessLayer
 
         public int DeleteEvent(int id)
         {
-            string sql = "DELETE FROM Events WHERE EventID=" +id;
+            string sql = "DELETE  E, P FROM Events E inner join Photos P on  WHERE EventID=" +id;
             return this.ExecuteQuery(sql);
         }
     }
