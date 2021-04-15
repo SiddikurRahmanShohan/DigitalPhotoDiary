@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccessLayer\DataAccess.cs" />
+    <Compile Include="DataAccessLayer\Entity\UserEvent.cs" />
+    <Compile Include="DataAccessLayer\Entity\Photo.cs" />
+    <Compile Include="DataAccessLayer\Entity\User.cs" />
+    <Compile Include="DataAccessLayer\EventDataAccess.cs" />
+    <Compile Include="DataAccessLayer\PhotoDataAccess.cs" />
+    <Compile Include="DataAccessLayer\UserDataAccess.cs" />
     <Compile Include="PresentationLayer\CreateEventPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,7 +124,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BusinessLayer\" />
-    <Folder Include="DataAccessLayer\Entity\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
