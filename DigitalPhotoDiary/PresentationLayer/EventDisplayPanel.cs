@@ -41,5 +41,15 @@ namespace DigitalPhotoDiary.PresentationLayer
         {
             Application.Exit();
         }
+
+        private void storyTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void storyGroypBox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

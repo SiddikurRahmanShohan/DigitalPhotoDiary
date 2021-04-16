@@ -40,6 +40,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.userIdLabel = new System.Windows.Forms.Label();
             this.EventLabel = new System.Windows.Forms.Label();
             this.eventNameTextBox = new System.Windows.Forms.TextBox();
+            this.deleteEventButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eventsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.welcomeLabel.AutoSize = true;
             this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeLabel.Location = new System.Drawing.Point(196, 19);
+            this.welcomeLabel.Location = new System.Drawing.Point(490, 19);
             this.welcomeLabel.Name = "welcomeLabel";
             this.welcomeLabel.Size = new System.Drawing.Size(152, 18);
             this.welcomeLabel.TabIndex = 0;
@@ -56,7 +57,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // createEventButton
             // 
             this.createEventButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createEventButton.Location = new System.Drawing.Point(1035, 167);
+            this.createEventButton.Location = new System.Drawing.Point(1006, 167);
             this.createEventButton.Name = "createEventButton";
             this.createEventButton.Size = new System.Drawing.Size(86, 73);
             this.createEventButton.TabIndex = 1;
@@ -67,9 +68,9 @@ namespace DigitalPhotoDiary.PresentationLayer
             // goToButton
             // 
             this.goToButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.goToButton.Location = new System.Drawing.Point(241, 419);
+            this.goToButton.Location = new System.Drawing.Point(647, 406);
             this.goToButton.Name = "goToButton";
-            this.goToButton.Size = new System.Drawing.Size(78, 32);
+            this.goToButton.Size = new System.Drawing.Size(85, 32);
             this.goToButton.TabIndex = 4;
             this.goToButton.Text = "Go";
             this.goToButton.UseVisualStyleBackColor = true;
@@ -82,7 +83,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.eventsDataGridView.Name = "eventsDataGridView";
             this.eventsDataGridView.RowHeadersWidth = 51;
             this.eventsDataGridView.RowTemplate.Height = 24;
-            this.eventsDataGridView.Size = new System.Drawing.Size(917, 178);
+            this.eventsDataGridView.Size = new System.Drawing.Size(884, 178);
             this.eventsDataGridView.TabIndex = 5;
             this.eventsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventsDataGridView_CellClick);
             // 
@@ -90,7 +91,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.overviewLabel.AutoSize = true;
             this.overviewLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overviewLabel.Location = new System.Drawing.Point(144, 85);
+            this.overviewLabel.Location = new System.Drawing.Point(69, 85);
             this.overviewLabel.Name = "overviewLabel";
             this.overviewLabel.Size = new System.Drawing.Size(175, 18);
             this.overviewLabel.TabIndex = 6;
@@ -100,7 +101,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.EventIdLabel.AutoSize = true;
             this.EventIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventIdLabel.Location = new System.Drawing.Point(63, 321);
+            this.EventIdLabel.Location = new System.Drawing.Point(384, 321);
             this.EventIdLabel.Name = "EventIdLabel";
             this.EventIdLabel.Size = new System.Drawing.Size(83, 20);
             this.EventIdLabel.TabIndex = 7;
@@ -109,7 +110,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // eventIdTextBox
             // 
             this.eventIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventIdTextBox.Location = new System.Drawing.Point(162, 318);
+            this.eventIdTextBox.Location = new System.Drawing.Point(499, 318);
             this.eventIdTextBox.Name = "eventIdTextBox";
             this.eventIdTextBox.Size = new System.Drawing.Size(233, 27);
             this.eventIdTextBox.TabIndex = 8;
@@ -117,7 +118,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // logoutButton
             // 
             this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutButton.Location = new System.Drawing.Point(426, 487);
+            this.logoutButton.Location = new System.Drawing.Point(567, 477);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(103, 42);
             this.logoutButton.TabIndex = 9;
@@ -129,7 +130,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.userIdLabel.AutoSize = true;
             this.userIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userIdLabel.Location = new System.Drawing.Point(437, 19);
+            this.userIdLabel.Location = new System.Drawing.Point(699, 19);
             this.userIdLabel.Name = "userIdLabel";
             this.userIdLabel.Size = new System.Drawing.Size(18, 18);
             this.userIdLabel.TabIndex = 10;
@@ -139,7 +140,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.EventLabel.AutoSize = true;
             this.EventLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventLabel.Location = new System.Drawing.Point(84, 363);
+            this.EventLabel.Location = new System.Drawing.Point(405, 366);
             this.EventLabel.Name = "EventLabel";
             this.EventLabel.Size = new System.Drawing.Size(62, 20);
             this.EventLabel.TabIndex = 11;
@@ -148,16 +149,28 @@ namespace DigitalPhotoDiary.PresentationLayer
             // eventNameTextBox
             // 
             this.eventNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventNameTextBox.Location = new System.Drawing.Point(162, 360);
+            this.eventNameTextBox.Location = new System.Drawing.Point(499, 363);
             this.eventNameTextBox.Name = "eventNameTextBox";
             this.eventNameTextBox.Size = new System.Drawing.Size(233, 27);
             this.eventNameTextBox.TabIndex = 12;
+            // 
+            // deleteEventButton
+            // 
+            this.deleteEventButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteEventButton.Location = new System.Drawing.Point(499, 406);
+            this.deleteEventButton.Name = "deleteEventButton";
+            this.deleteEventButton.Size = new System.Drawing.Size(91, 32);
+            this.deleteEventButton.TabIndex = 13;
+            this.deleteEventButton.Text = "Delete";
+            this.deleteEventButton.UseVisualStyleBackColor = true;
+            this.deleteEventButton.Click += new System.EventHandler(this.deleteEventButton_Click);
             // 
             // HomePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1201, 550);
+            this.ClientSize = new System.Drawing.Size(1162, 550);
+            this.Controls.Add(this.deleteEventButton);
             this.Controls.Add(this.eventNameTextBox);
             this.Controls.Add(this.EventLabel);
             this.Controls.Add(this.userIdLabel);
@@ -193,5 +206,6 @@ namespace DigitalPhotoDiary.PresentationLayer
         private System.Windows.Forms.Label userIdLabel;
         private System.Windows.Forms.Label EventLabel;
         private System.Windows.Forms.TextBox eventNameTextBox;
+        private System.Windows.Forms.Button deleteEventButton;
     }
 }

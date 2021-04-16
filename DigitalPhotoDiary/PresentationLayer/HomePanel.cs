@@ -82,5 +82,26 @@ namespace DigitalPhotoDiary.PresentationLayer
         {
             Application.Exit();
         }
+
+        private void deleteEventButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("The Selected Evnet Will be Deleted!", "Delete Event", MessageBoxButtons.OKCancel) == DialogResult.OK)
+
+            {
+
+                EventsService eventsService = new EventsService();
+                int result = eventsService.DeleteEvent(Convert.ToInt32(eventIdTextBox.Text));
+                if (result > 0)
+                {
+                    MessageBox.Show("Event Deleted!");
+                    UpdateListOfEvents();
+                }
+                else { MessageBox.Show("Registration Error!"); }
+
+            }
+            else { 
+                
+            }
+        }
     }
 }

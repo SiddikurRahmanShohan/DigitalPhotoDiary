@@ -28,11 +28,12 @@ namespace DigitalPhotoDiary.DataAccessLayer
 
         public UserEvent GetEvent(string eventName, int eventId)
         {
-            string sql = "SELECT Name,EventDate,ModificationDate,UserId fROM Events WHERE  Name ='"+eventName+"'AND EventId=" + eventId;
+            string sql = "SELECT EventId,Name,EventDate,ModificationDate,UserId fROM Events WHERE  Name ='"+eventName+"'AND EventId=" + eventId;
             SqlDataReader reader = this.GetData(sql);
             if (reader.Read())
             {
                 UserEvent userEvent = new UserEvent();
+                userEvent.EventId = Convert.ToInt32(reader["EventId"]);
                 userEvent.EventName = reader["Name"].ToString();
                 userEvent.EventDate = reader["EventDate"].ToString();
                 userEvent.ModificationDate = reader["ModificationDate"].ToString();
@@ -50,7 +51,7 @@ namespace DigitalPhotoDiary.DataAccessLayer
 
         public int DeleteEvent(int id)
         {
-            string sql = "DELETE  E, P FROM Events E inner join Photos P on  WHERE EventID=" +id;
+            string sql = "DELETE FROM Events WHERE EventID=" +id;
             return this.ExecuteQuery(sql);
         }
     }
