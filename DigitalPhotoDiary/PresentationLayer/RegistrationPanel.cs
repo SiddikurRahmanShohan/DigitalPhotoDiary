@@ -19,16 +19,9 @@ namespace DigitalPhotoDiary.PresentationLayer
             registerButton.Enabled = false;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void RegistrationPanel_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-
-        }
+       
 
         private void registerButton_Click(object sender, EventArgs e)
         {
@@ -84,6 +77,11 @@ namespace DigitalPhotoDiary.PresentationLayer
 
         private void RegistrationPanel_Load(object sender, EventArgs e)
         {
+
+        }
+        private void RegistrationPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
 
         }
     }

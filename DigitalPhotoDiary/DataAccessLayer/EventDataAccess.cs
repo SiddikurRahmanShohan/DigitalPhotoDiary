@@ -12,7 +12,7 @@ namespace DigitalPhotoDiary.DataAccessLayer
     {
         public List<UserEvent> GetEvents(int id)
         {
-            string sql = "SELECT * fROM Events WHERE UserId=" + id;
+            string sql = "SELECT * fROM Events WHERE UserId=" + id+"ORDER BY IMPORTANCE DESC";
             SqlDataReader reader = this.GetData(sql);
             List<UserEvent> events = new List<UserEvent>();
             while (reader.Read()) {
@@ -28,15 +28,15 @@ namespace DigitalPhotoDiary.DataAccessLayer
 
         public UserEvent GetEvent(string eventName, int eventId)
         {
-            string sql = "SELECT Name,EventDate,ModificationDate fROM Events WHERE  Name ='"+eventName+"'AND EventId=" + eventId;
+            string sql = "SELECT Name,EventDate,ModificationDate,UserId fROM Events WHERE  Name ='"+eventName+"'AND EventId=" + eventId;
             SqlDataReader reader = this.GetData(sql);
             if (reader.Read())
             {
                 UserEvent userEvent = new UserEvent();
-               // userEvent.EventId = Convert.ToInt32(reader["EventId"]);
                 userEvent.EventName = reader["Name"].ToString();
                 userEvent.EventDate = reader["EventDate"].ToString();
                 userEvent.ModificationDate = reader["ModificationDate"].ToString();
+                userEvent.UserId = Convert.ToInt32(reader["UserId"]);
                 return userEvent;
             }
             return null;

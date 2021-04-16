@@ -32,8 +32,8 @@ namespace DigitalPhotoDiary.DataAccessLayer
             return this.command.ExecuteNonQuery();
         }
 
-        ~DataAccess() {
+        /*~DataAccess() {
             this.connection.Close();
-        }
+        }*/
     }
 }

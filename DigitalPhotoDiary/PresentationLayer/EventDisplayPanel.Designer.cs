@@ -239,7 +239,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 548);
+            this.ClientSize = new System.Drawing.Size(1140, 548);
             this.Controls.Add(this.eventIdLabel);
             this.Controls.Add(this.userIdLabel);
             this.Controls.Add(this.userNameLabel);

@@ -56,7 +56,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // createEventButton
             // 
             this.createEventButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createEventButton.Location = new System.Drawing.Point(440, 157);
+            this.createEventButton.Location = new System.Drawing.Point(1035, 167);
             this.createEventButton.Name = "createEventButton";
             this.createEventButton.Size = new System.Drawing.Size(86, 73);
             this.createEventButton.TabIndex = 1;
@@ -82,7 +82,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.eventsDataGridView.Name = "eventsDataGridView";
             this.eventsDataGridView.RowHeadersWidth = 51;
             this.eventsDataGridView.RowTemplate.Height = 24;
-            this.eventsDataGridView.Size = new System.Drawing.Size(332, 178);
+            this.eventsDataGridView.Size = new System.Drawing.Size(917, 178);
             this.eventsDataGridView.TabIndex = 5;
             this.eventsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventsDataGridView_CellClick);
             // 
@@ -117,7 +117,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // logoutButton
             // 
             this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutButton.Location = new System.Drawing.Point(229, 486);
+            this.logoutButton.Location = new System.Drawing.Point(426, 487);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(103, 42);
             this.logoutButton.TabIndex = 9;
@@ -157,7 +157,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 550);
+            this.ClientSize = new System.Drawing.Size(1201, 550);
             this.Controls.Add(this.eventNameTextBox);
             this.Controls.Add(this.EventLabel);
             this.Controls.Add(this.userIdLabel);

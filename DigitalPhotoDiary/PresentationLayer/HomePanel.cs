@@ -21,11 +21,6 @@ namespace DigitalPhotoDiary.PresentationLayer
             userIdLabel.Text = Convert.ToString(userId);
         }
 
-        private void HomePanel_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void goToButton_Click(object sender, EventArgs e)
         {
             if (eventIdTextBox.Text == "")
@@ -81,6 +76,11 @@ namespace DigitalPhotoDiary.PresentationLayer
         {
             eventIdTextBox.Text = eventsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
             eventNameTextBox.Text = eventsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void HomePanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

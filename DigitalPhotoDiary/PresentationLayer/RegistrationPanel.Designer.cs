@@ -126,7 +126,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.confirmPasswordTextBox.PasswordChar = '*';
             this.confirmPasswordTextBox.Size = new System.Drawing.Size(198, 30);
             this.confirmPasswordTextBox.TabIndex = 15;
-            this.confirmPasswordTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+           // this.confirmPasswordTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // termsCheckBox
             // 

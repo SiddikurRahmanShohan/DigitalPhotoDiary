@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DigitalPhotoDiary.DataAccessLayer.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace DigitalPhotoDiary.PresentationLayer
 {
     public partial class EventDisplayPanel : Form
     {
-        public EventDisplayPanel(int eventId, string name, string date, string modDate, int userId, string userName)
+        public EventDisplayPanel( int eventId, string name, string date, string modDate, int userId, string userName)
         {
             InitializeComponent();
             userNameLabel.Text = userName;
@@ -23,10 +24,6 @@ namespace DigitalPhotoDiary.PresentationLayer
             dateLabel.Text = date;
         }
 
-        private void EventDisplayPanel_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void homeBackButton_Click(object sender, EventArgs e)
         {
@@ -38,6 +35,11 @@ namespace DigitalPhotoDiary.PresentationLayer
         private void EventDisplayPanel_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void EventDisplayPanel_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

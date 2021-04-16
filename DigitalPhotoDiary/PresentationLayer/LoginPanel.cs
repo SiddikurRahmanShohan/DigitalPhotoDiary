@@ -19,17 +19,6 @@ namespace DigitalPhotoDiary.PresentationLayer
             InitializeComponent();
         }
 
-        private void LoginPanel_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void registrationLabel_Click(object sender, EventArgs e)
-        {
-            RegistrationPanel registrationPanel = new RegistrationPanel();
-            this.Hide();
-            registrationPanel.Show();
-        }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
@@ -65,6 +54,11 @@ namespace DigitalPhotoDiary.PresentationLayer
         private void LoginPanel_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoginPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
