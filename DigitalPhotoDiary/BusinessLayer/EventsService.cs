@@ -22,6 +22,11 @@ namespace DigitalPhotoDiary.BusinessLayer
 
             return this.eventDataAccess.GetEvents(id);
         }
+        public List<UserEvent> GetEventsByImport(int id)
+        {
+
+            return this.eventDataAccess.GetEventsByImport(id);
+        }
 
         public UserEvent GetUserEvent(string eventName, int eventId)
         {

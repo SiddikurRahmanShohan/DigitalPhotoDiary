@@ -37,7 +37,7 @@ namespace DigitalPhotoDiary.PresentationLayer
                 UserEvent userEvent = eventsService.GetUserEvent(eventNameTextBox.Text, Convert.ToInt32(eventIdTextBox.Text));
                 if (userEvent != null) {
 
-                    EventDisplayPanel eventDisplayPanel = new EventDisplayPanel(userEvent.EventId, userEvent.EventName, userEvent.EventDate, userEvent.ModificationDate, userEvent.UserId, welcomeLabel.Text);
+                    EventDisplayPanel eventDisplayPanel = new EventDisplayPanel(userEvent.EventId, userEvent.EventName, userEvent.EventDate, userEvent.ModificationDate, Convert.ToInt32(userIdLabel.Text), welcomeLabel.Text);
                     this.Hide();
                     eventDisplayPanel.Show();
                 }
@@ -102,6 +102,12 @@ namespace DigitalPhotoDiary.PresentationLayer
             else { 
                 
             }
+        }
+
+        private void orderButton_Click(object sender, EventArgs e)
+        {
+            EventsService eventsService = new EventsService();
+            eventsDataGridView.DataSource = eventsService.GetEventsByImport(Convert.ToInt32(userIdLabel.Text));
         }
     }
 }

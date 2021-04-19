@@ -36,7 +36,30 @@ namespace DigitalPhotoDiary.PresentationLayer
 
         private void EventDisplayPanel_Load(object sender, EventArgs e)
         {
-            //UpdatePhotos();
+            try {
+                UpdatePhoto1();
+                
+            }
+            catch (Exception exp) { }
+            try
+            {
+                
+                UpdatePhoto2();
+                
+            }
+            catch (Exception exp) { }
+            try
+            {
+                
+                UpdateStory1();
+               
+            }
+            catch (Exception exp) { }
+            try
+            {
+                UpdateStory2();
+            }
+            catch (Exception exp) { }
         }
 
         private void EventDisplayPanel_FormClosed(object sender, FormClosedEventArgs e)
@@ -59,26 +82,48 @@ namespace DigitalPhotoDiary.PresentationLayer
 
         }
 
-        void UpdatePhotos()
+        void UpdatePhoto1()
         {
             PhotoService photoService = new PhotoService();
-            Photo photo;
-            photo = photoService.GetPhoto(Convert.ToInt32(eventIdLabel.Text), "photo1");
-            if (photo != null)
+            Photo photo = photoService.GetPhoto(Convert.ToInt32(eventIdLabel.Text), "photo1");
+            if (photo.Directory != null)
             {
                 pictureBox1.Image = Image.FromFile(photo.Directory);
-                storyLabel1.Text = photo.Story;
-                PhotoService photoService1 = new PhotoService();
-                photo = photoService1.GetPhoto(Convert.ToInt32(eventIdLabel.Text), "photo2");
-                if (photo != null)
-                {
-                    pictureBox2.Image = Image.FromFile(photo.Directory);
-                    storyLabel2.Text = photo.Story;
-                }
-                else { }
+                //storyLabel1.Text = photo.Story;
+            }
+
+        }
+        void UpdatePhoto2()
+        {
+            PhotoService photoService = new PhotoService();
+            Photo photo = photoService.GetPhoto(Convert.ToInt32(eventIdLabel.Text), "photo2");
+            if (photo.Directory != null)
+            {
+                pictureBox2.Image = Image.FromFile(photo.Directory);
+                //storyLabel1.Text = photo.Story;
             }
             else { }
-            
+
+        }
+        void UpdateStory1()
+        {
+            PhotoService photoService = new PhotoService();
+            Photo photo = photoService.GetPhoto(Convert.ToInt32(eventIdLabel.Text), "photo1");
+            if (photo.Story != null)
+            {
+                storyLabel1.Text = photo.Story;
+            }
+            else { }
+        }
+        void UpdateStory2()
+        {
+            PhotoService photoService = new PhotoService();
+            Photo photo = photoService.GetPhoto(Convert.ToInt32(eventIdLabel.Text), "photo2");
+            if (photo.Story != null)
+            {
+                storyLabel2.Text = photo.Story;
+            }
+            else { }
         }
         private void browseButton_Click(object sender, EventArgs e)
         {
@@ -95,14 +140,34 @@ namespace DigitalPhotoDiary.PresentationLayer
 
         private void addPhotoButton1_Click(object sender, EventArgs e)
         {
+            /* PhotoService photoService = new PhotoService();
+             Photo photo = photoService.GetPhoto(Convert.ToInt32(eventIdLabel.Text), "photo1");
+             photoService = null;
+             if (photo == null)
+             {
+                 PhotoService photoService1 = new PhotoService();
+                 string stor = @"D:\Documents\Programming\C#\DigitalPhotoDiary\DigitalPhotoDiary\Storage\photo1.png";
+                 File.Copy(pathTextBox1.Text, stor, true);
+                 pictureBox1.Image = Image.FromFile(stor);
+                 int result = photoService1.AddNewPhoto("photo1", stor, null, Convert.ToInt32(eventIdLabel.Text));
+                 if (result > 0)
+                 {
+                     MessageBox.Show("Added!");
+                     pathTextBox1.Text = "Photo1";
+                     EventsService eventsService = new EventsService();
+                     eventsService.UpdateDate(Convert.ToInt32(eventIdLabel.Text), DateTime.Now.ToString("u"));
+                 }
+                 else { MessageBox.Show("Something Wrong!"); }
+             }
+             else { MessageBox.Show("You have Already Added!"); }*/
             PhotoService photoService = new PhotoService();
-            Photo photo = photoService.GetPhoto(Convert.ToInt32(eventIdLabel.Text), "photo1");
+            Photo p = photoService.GetPhoto(Convert.ToInt32(eventIdLabel.Text), "photo1");
             photoService = null;
-            if (photo == null)
+            if (p == null)
             {
                 PhotoService photoService1 = new PhotoService();
-                string stor = @"D:\Documents\Programming\C#\DigitalPhotoDiary\DigitalPhotoDiary\Storage\photo1.png";
-                File.Copy(pathTextBox1.Text, stor, true);
+                string stor = pathTextBox1.Text; //@"D:\Documents\Programming\C#\DigitalPhotoDiary\DigitalPhotoDiary\Storage\photo2.png";
+                                                 //File.Copy(pathTextBox2.Text, stor, true);
                 pictureBox1.Image = Image.FromFile(stor);
                 int result = photoService1.AddNewPhoto("photo1", stor, null, Convert.ToInt32(eventIdLabel.Text));
                 if (result > 0)
@@ -124,8 +189,8 @@ namespace DigitalPhotoDiary.PresentationLayer
             photoService = null;
             if (p == null) {
                 PhotoService photoService1 = new PhotoService();
-                string stor = @"D:\Documents\Programming\C#\DigitalPhotoDiary\DigitalPhotoDiary\Storage\photo2.png";
-                File.Copy(pathTextBox2.Text, stor, true);
+                string stor = pathTextBox2.Text; //@"D:\Documents\Programming\C#\DigitalPhotoDiary\DigitalPhotoDiary\Storage\photo2.png";
+                 //File.Copy(pathTextBox2.Text, stor, true);
                 pictureBox2.Image = Image.FromFile(stor);
                 int result = photoService1.AddNewPhoto("photo2", stor, null, Convert.ToInt32(eventIdLabel.Text));
                 if (result > 0)
@@ -142,20 +207,42 @@ namespace DigitalPhotoDiary.PresentationLayer
 
         private void updatePhotoButton1_Click(object sender, EventArgs e)
         {
-            //PhotoService photoService = new PhotoService();
-            string stor = @"D:\Documents\Programming\C#\DigitalPhotoDiary\DigitalPhotoDiary\Storage\photo1.png";
-            File.Delete(stor);
-            File.Copy(pathTextBox1.Text, stor, true);
-            MessageBox.Show("Updated!");
+            if (pathTextBox2.Text != "photo1") {
+                PhotoService photoService = new PhotoService();
+                Photo photo = photoService.GetPhoto(Convert.ToInt32(eventIdLabel.Text), "photo1");
+                photoService = null;
+                PhotoService photoService1 = new PhotoService();
+                int result = photoService1.UpdatePhoto(pathTextBox1.Text, photo.PhotoId);
+                if (result > 0)
+                {
+                    MessageBox.Show("Updated!");
+                    pictureBox1.Image = Image.FromFile(pathTextBox1.Text);
+                    pathTextBox1.Text = null;
+                }
+                else
+                {
+                    MessageBox.Show("Something Went Wrong!");
+                }
+            }
         }
 
         private void updatePhotoButton2_Click(object sender, EventArgs e)
         {
-            //PhotoService photoService = new PhotoService();
-            string stor = @"D:\Documents\Programming\C#\DigitalPhotoDiary\DigitalPhotoDiary\Storage\photo2.png";
-            File.Delete(stor);
-            File.Copy(pathTextBox2.Text, stor, true);
-            MessageBox.Show("Updated!");
+            if (pathTextBox2.Text != "photo2") { PhotoService photoService = new PhotoService();
+                Photo photo = photoService.GetPhoto(Convert.ToInt32(eventIdLabel.Text), "photo2");
+                photoService = null;
+                PhotoService photoService1 = new PhotoService();
+                int result = photoService1.UpdatePhoto(pathTextBox2.Text, photo.PhotoId);
+                if (result > 0)
+                {
+                    MessageBox.Show("Updated!");
+                    pictureBox2.Image = Image.FromFile(pathTextBox2.Text);
+                    pathTextBox2.Text = null;
+                }
+                else {
+                    MessageBox.Show("Something Went Wrong!");
+                }
+            }
         }
 
         private void addStoryButton1_Click(object sender, EventArgs e)

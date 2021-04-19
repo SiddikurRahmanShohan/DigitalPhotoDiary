@@ -40,7 +40,7 @@ namespace DigitalPhotoDiary.PresentationLayer
                     this.Hide();
                     homePanel.Show();
                 }
-                else { MessageBox.Show("Something Went Worng!"); }
+                else { MessageBox.Show("You Don't Have Any Account!"); }
             }
         }
 

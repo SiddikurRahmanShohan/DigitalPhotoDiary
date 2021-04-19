@@ -50,11 +50,9 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.eventIdLabel = new System.Windows.Forms.Label();
             this.updatePhotoButton1 = new System.Windows.Forms.Button();
             this.updatePhotoButton2 = new System.Windows.Forms.Button();
-            this.updateStoryButton1 = new System.Windows.Forms.Button();
-            this.updateStoryButton2 = new System.Windows.Forms.Button();
             this.browseButton = new System.Windows.Forms.Button();
             this.browseButton2 = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.pathTextBox1 = new System.Windows.Forms.TextBox();
             this.pathTextBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -201,24 +199,24 @@ namespace DigitalPhotoDiary.PresentationLayer
             // addStoryButton1
             // 
             this.addStoryButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addStoryButton1.Location = new System.Drawing.Point(258, 412);
+            this.addStoryButton1.Location = new System.Drawing.Point(177, 412);
             this.addStoryButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addStoryButton1.Name = "addStoryButton1";
-            this.addStoryButton1.Size = new System.Drawing.Size(74, 31);
+            this.addStoryButton1.Size = new System.Drawing.Size(122, 31);
             this.addStoryButton1.TabIndex = 10;
-            this.addStoryButton1.Text = "AddStory";
+            this.addStoryButton1.Text = "Add/UpdateStory";
             this.addStoryButton1.UseVisualStyleBackColor = true;
             this.addStoryButton1.Click += new System.EventHandler(this.addStoryButton1_Click);
             // 
             // addStoryButton2
             // 
             this.addStoryButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addStoryButton2.Location = new System.Drawing.Point(575, 412);
+            this.addStoryButton2.Location = new System.Drawing.Point(580, 412);
             this.addStoryButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addStoryButton2.Name = "addStoryButton2";
-            this.addStoryButton2.Size = new System.Drawing.Size(81, 31);
+            this.addStoryButton2.Size = new System.Drawing.Size(124, 31);
             this.addStoryButton2.TabIndex = 11;
-            this.addStoryButton2.Text = "AddStory";
+            this.addStoryButton2.Text = "Add/UpdateStory";
             this.addStoryButton2.UseVisualStyleBackColor = true;
             this.addStoryButton2.Click += new System.EventHandler(this.addStoryButton2_Click);
             // 
@@ -296,33 +294,11 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.updatePhotoButton2.UseVisualStyleBackColor = true;
             this.updatePhotoButton2.Click += new System.EventHandler(this.updatePhotoButton2_Click);
             // 
-            // updateStoryButton1
-            // 
-            this.updateStoryButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateStoryButton1.Location = new System.Drawing.Point(172, 412);
-            this.updateStoryButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.updateStoryButton1.Name = "updateStoryButton1";
-            this.updateStoryButton1.Size = new System.Drawing.Size(75, 31);
-            this.updateStoryButton1.TabIndex = 19;
-            this.updateStoryButton1.Text = "Update";
-            this.updateStoryButton1.UseVisualStyleBackColor = true;
-            // 
-            // updateStoryButton2
-            // 
-            this.updateStoryButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateStoryButton2.Location = new System.Drawing.Point(660, 412);
-            this.updateStoryButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.updateStoryButton2.Name = "updateStoryButton2";
-            this.updateStoryButton2.Size = new System.Drawing.Size(75, 31);
-            this.updateStoryButton2.TabIndex = 20;
-            this.updateStoryButton2.Text = "Update";
-            this.updateStoryButton2.UseVisualStyleBackColor = true;
-            // 
             // browseButton
             // 
             this.browseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.browseButton.Location = new System.Drawing.Point(11, 273);
-            this.browseButton.Margin = new System.Windows.Forms.Padding(2);
+            this.browseButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(81, 31);
             this.browseButton.TabIndex = 21;
@@ -334,7 +310,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.browseButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.browseButton2.Location = new System.Drawing.Point(809, 264);
-            this.browseButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.browseButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.browseButton2.Name = "browseButton2";
             this.browseButton2.Size = new System.Drawing.Size(81, 31);
             this.browseButton2.TabIndex = 22;
@@ -342,14 +318,19 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.browseButton2.UseVisualStyleBackColor = true;
             this.browseButton2.Click += new System.EventHandler(this.browseButton2_Click);
             // 
-            // openFileDialog1
+            // openFileDialog
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog.DefaultExt = "png";
+            this.openFileDialog.FileName = "openFileDialog1";
+            this.openFileDialog.FilterIndex = 2;
+            this.openFileDialog.InitialDirectory = "@\"D:\\\";";
+            this.openFileDialog.ReadOnlyChecked = true;
+            this.openFileDialog.RestoreDirectory = true;
             // 
             // pathTextBox1
             // 
             this.pathTextBox1.Location = new System.Drawing.Point(126, 284);
-            this.pathTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pathTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pathTextBox1.Name = "pathTextBox1";
             this.pathTextBox1.ReadOnly = true;
             this.pathTextBox1.Size = new System.Drawing.Size(248, 20);
@@ -358,7 +339,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             // pathTextBox2
             // 
             this.pathTextBox2.Location = new System.Drawing.Point(509, 284);
-            this.pathTextBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pathTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pathTextBox2.Name = "pathTextBox2";
             this.pathTextBox2.ReadOnly = true;
             this.pathTextBox2.Size = new System.Drawing.Size(248, 20);
@@ -368,13 +349,11 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 494);
+            this.ClientSize = new System.Drawing.Size(901, 499);
             this.Controls.Add(this.pathTextBox2);
             this.Controls.Add(this.pathTextBox1);
             this.Controls.Add(this.browseButton2);
             this.Controls.Add(this.browseButton);
-            this.Controls.Add(this.updateStoryButton2);
-            this.Controls.Add(this.updateStoryButton1);
             this.Controls.Add(this.updatePhotoButton2);
             this.Controls.Add(this.updatePhotoButton1);
             this.Controls.Add(this.eventIdLabel);
@@ -434,11 +413,9 @@ namespace DigitalPhotoDiary.PresentationLayer
         private System.Windows.Forms.Label eventIdLabel;
         private System.Windows.Forms.Button updatePhotoButton1;
         private System.Windows.Forms.Button updatePhotoButton2;
-        private System.Windows.Forms.Button updateStoryButton1;
-        private System.Windows.Forms.Button updateStoryButton2;
         private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.Button browseButton2;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.TextBox pathTextBox1;
         private System.Windows.Forms.TextBox pathTextBox2;
     }
