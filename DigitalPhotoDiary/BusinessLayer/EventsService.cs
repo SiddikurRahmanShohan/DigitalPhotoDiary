@@ -35,6 +35,9 @@ namespace DigitalPhotoDiary.BusinessLayer
             UserEvent userEvent = new UserEvent() { EventName = name, EventDate = eventDate, ModificationDate = modificationDate, Importance = importance, UserId = userId };
             return this.eventDataAccess.AddEvent(userEvent);
         }
+        public int UpdateDate(int id, string date) {
+            return this.eventDataAccess.UpdateEventDate(id, date);
+        }
 
         public int DeleteEvent(int eventId)
         {

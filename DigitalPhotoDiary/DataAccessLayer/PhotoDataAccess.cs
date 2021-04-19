@@ -10,28 +10,27 @@ namespace DigitalPhotoDiary.DataAccessLayer
 {
     class PhotoDataAccess: DataAccess
     {
-        public List<Photo> GetPhotos(int eventId)
+        public Photo GetPhoto(int eventId, string name)
         {
-            string sql = "SELECT * fROM Photos WHERE EventId=" + eventId;
+            string sql = "SELECT * FROM Photos WHERE EventId=" + eventId + " AND Name= '"+name+"'";
             SqlDataReader reader = this.GetData(sql);
-            List<Photo> photos = new List<Photo>();
-            while (reader.Read())
+            if (reader.Read())
             {
-                Photo Photo = new Photo();
-                //userEvent.EventId = Convert.ToInt32(reader["UserId"]);
-                Photo.PhotoName = reader["Name"].ToString();
-                Photo.Directory = reader["Directory"].ToString();
-                Photo.Story = reader["Story"].ToString();
-                Photo.EventId = Convert.ToInt32(reader["EventId"]);
-                photos.Add(Photo);
+                Photo photo = new Photo();
+                photo.PhotoId = Convert.ToInt32(reader["PhotoId"]);
+                photo.PhotoName = reader["Name"].ToString();
+                photo.Directory = reader["Directory"].ToString();
+                photo.Story = reader["Story"].ToString();
+                photo.EventId = Convert.ToInt32(reader["EventId"]);
+                return photo;
             }
-            return photos;
+            return null;
         }
 
        
         public int AddPhoto(Photo photo)
         {
-            string sql = "INSERT INTO Photos(Name,Directory,Story,EventId) VALUES ('" + photo.PhotoName + "', '" + photo.Directory + "','" + photo.Story + "'," + "+)" + photo.EventId;
+            string sql = "INSERT INTO Photos(Name,Directory,Story,EventId) VALUES ('" + photo.PhotoName + "', '" + photo.Directory + "','" + photo.Story + "'," + photo.EventId+")";
             return this.ExecuteQuery(sql);
         }
 

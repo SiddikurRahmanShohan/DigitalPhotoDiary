@@ -48,7 +48,11 @@ namespace DigitalPhotoDiary.DataAccessLayer
             string sql = "INSERT INTO Events(Name,EventDate,ModificationDate,Importance,UserId) VALUES ('" + userEvent.EventName + "', '" + userEvent.EventDate + "','" + userEvent.ModificationDate + "'," + userEvent.Importance + "," + userEvent.UserId + ")";
              return this.ExecuteQuery(sql);
          }
-
+        public int UpdateEventDate(int id, string date)
+        {
+            string sql = "UPDATE Events SET ModificationDate='"+date+"' WHERE EventID=" + id;
+            return this.ExecuteQuery(sql);
+        }
         public int DeleteEvent(int id)
         {
             string sql = "DELETE FROM Events WHERE EventID=" +id;

@@ -52,6 +52,11 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.updatePhotoButton2 = new System.Windows.Forms.Button();
             this.updateStoryButton1 = new System.Windows.Forms.Button();
             this.updateStoryButton2 = new System.Windows.Forms.Button();
+            this.browseButton = new System.Windows.Forms.Button();
+            this.browseButton2 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pathTextBox1 = new System.Windows.Forms.TextBox();
+            this.pathTextBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.storyGroypBox.SuspendLayout();
@@ -62,18 +67,20 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.eventNameLabel.AutoSize = true;
             this.eventNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventNameLabel.Location = new System.Drawing.Point(93, 50);
+            this.eventNameLabel.Location = new System.Drawing.Point(70, 24);
+            this.eventNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.eventNameLabel.Name = "eventNameLabel";
-            this.eventNameLabel.Size = new System.Drawing.Size(59, 20);
+            this.eventNameLabel.Size = new System.Drawing.Size(52, 17);
             this.eventNameLabel.TabIndex = 0;
             this.eventNameLabel.Text = "label1";
             // 
             // homeBackButton
             // 
             this.homeBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeBackButton.Location = new System.Drawing.Point(546, 558);
+            this.homeBackButton.Location = new System.Drawing.Point(410, 453);
+            this.homeBackButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.homeBackButton.Name = "homeBackButton";
-            this.homeBackButton.Size = new System.Drawing.Size(70, 38);
+            this.homeBackButton.Size = new System.Drawing.Size(52, 31);
             this.homeBackButton.TabIndex = 1;
             this.homeBackButton.Text = "Back";
             this.homeBackButton.UseVisualStyleBackColor = true;
@@ -83,9 +90,10 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.dateLabel.AutoSize = true;
             this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Location = new System.Drawing.Point(835, 30);
+            this.dateLabel.Location = new System.Drawing.Point(634, 9);
+            this.dateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(59, 20);
+            this.dateLabel.Size = new System.Drawing.Size(52, 17);
             this.dateLabel.TabIndex = 2;
             this.dateLabel.Text = "label1";
             // 
@@ -93,34 +101,40 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.modificationDateLabel.AutoSize = true;
             this.modificationDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modificationDateLabel.Location = new System.Drawing.Point(823, 60);
+            this.modificationDateLabel.Location = new System.Drawing.Point(634, 35);
+            this.modificationDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.modificationDateLabel.Name = "modificationDateLabel";
-            this.modificationDateLabel.Size = new System.Drawing.Size(59, 20);
+            this.modificationDateLabel.Size = new System.Drawing.Size(52, 17);
             this.modificationDateLabel.TabIndex = 3;
             this.modificationDateLabel.Text = "label1";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(97, 102);
+            this.pictureBox1.Location = new System.Drawing.Point(96, 67);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(420, 258);
+            this.pictureBox1.Size = new System.Drawing.Size(315, 210);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(637, 102);
+            this.pictureBox2.Location = new System.Drawing.Point(495, 67);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(414, 258);
+            this.pictureBox2.Size = new System.Drawing.Size(310, 210);
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // storyGroypBox
             // 
             this.storyGroypBox.Controls.Add(this.storyLabel1);
-            this.storyGroypBox.Location = new System.Drawing.Point(159, 397);
+            this.storyGroypBox.Location = new System.Drawing.Point(119, 323);
+            this.storyGroypBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.storyGroypBox.Name = "storyGroypBox";
-            this.storyGroypBox.Size = new System.Drawing.Size(330, 50);
+            this.storyGroypBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.storyGroypBox.Size = new System.Drawing.Size(248, 41);
             this.storyGroypBox.TabIndex = 6;
             this.storyGroypBox.TabStop = false;
             this.storyGroypBox.Text = "Story:";
@@ -130,18 +144,21 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.storyLabel1.AutoSize = true;
             this.storyLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storyLabel1.Location = new System.Drawing.Point(6, 18);
+            this.storyLabel1.Location = new System.Drawing.Point(4, 15);
+            this.storyLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.storyLabel1.Name = "storyLabel1";
-            this.storyLabel1.Size = new System.Drawing.Size(164, 18);
+            this.storyLabel1.Size = new System.Drawing.Size(133, 15);
             this.storyLabel1.TabIndex = 1;
             this.storyLabel1.Text = "Your Story Will Be Here";
             // 
             // storyGroupBox
             // 
             this.storyGroupBox.Controls.Add(this.storyLabel2);
-            this.storyGroupBox.Location = new System.Drawing.Point(637, 397);
+            this.storyGroupBox.Location = new System.Drawing.Point(518, 323);
+            this.storyGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.storyGroupBox.Name = "storyGroupBox";
-            this.storyGroupBox.Size = new System.Drawing.Size(319, 50);
+            this.storyGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.storyGroupBox.Size = new System.Drawing.Size(239, 41);
             this.storyGroupBox.TabIndex = 7;
             this.storyGroupBox.TabStop = false;
             this.storyGroupBox.Text = "Story:";
@@ -150,64 +167,75 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.storyLabel2.AutoSize = true;
             this.storyLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storyLabel2.Location = new System.Drawing.Point(18, 20);
+            this.storyLabel2.Location = new System.Drawing.Point(14, 16);
+            this.storyLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.storyLabel2.Name = "storyLabel2";
-            this.storyLabel2.Size = new System.Drawing.Size(168, 18);
+            this.storyLabel2.Size = new System.Drawing.Size(136, 15);
             this.storyLabel2.TabIndex = 2;
             this.storyLabel2.Text = "Your Story Will Be Here.";
             // 
             // addPhotoButton1
             // 
             this.addPhotoButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPhotoButton1.Location = new System.Drawing.Point(27, 379);
+            this.addPhotoButton1.Location = new System.Drawing.Point(20, 316);
+            this.addPhotoButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addPhotoButton1.Name = "addPhotoButton1";
-            this.addPhotoButton1.Size = new System.Drawing.Size(109, 38);
+            this.addPhotoButton1.Size = new System.Drawing.Size(82, 31);
             this.addPhotoButton1.TabIndex = 8;
             this.addPhotoButton1.Text = "AddPhoto";
             this.addPhotoButton1.UseVisualStyleBackColor = true;
+            this.addPhotoButton1.Click += new System.EventHandler(this.addPhotoButton1_Click);
             // 
             // addPhotoButton2
             // 
             this.addPhotoButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPhotoButton2.Location = new System.Drawing.Point(986, 379);
+            this.addPhotoButton2.Location = new System.Drawing.Point(782, 309);
+            this.addPhotoButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addPhotoButton2.Name = "addPhotoButton2";
-            this.addPhotoButton2.Size = new System.Drawing.Size(111, 38);
+            this.addPhotoButton2.Size = new System.Drawing.Size(83, 31);
             this.addPhotoButton2.TabIndex = 9;
             this.addPhotoButton2.Text = "AddPhoto";
             this.addPhotoButton2.UseVisualStyleBackColor = true;
+            this.addPhotoButton2.Click += new System.EventHandler(this.addPhotoButton2_Click);
             // 
             // addStoryButton1
             // 
             this.addStoryButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addStoryButton1.Location = new System.Drawing.Point(344, 507);
+            this.addStoryButton1.Location = new System.Drawing.Point(258, 412);
+            this.addStoryButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addStoryButton1.Name = "addStoryButton1";
-            this.addStoryButton1.Size = new System.Drawing.Size(98, 38);
+            this.addStoryButton1.Size = new System.Drawing.Size(74, 31);
             this.addStoryButton1.TabIndex = 10;
             this.addStoryButton1.Text = "AddStory";
             this.addStoryButton1.UseVisualStyleBackColor = true;
+            this.addStoryButton1.Click += new System.EventHandler(this.addStoryButton1_Click);
             // 
             // addStoryButton2
             // 
             this.addStoryButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addStoryButton2.Location = new System.Drawing.Point(715, 507);
+            this.addStoryButton2.Location = new System.Drawing.Point(575, 412);
+            this.addStoryButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addStoryButton2.Name = "addStoryButton2";
-            this.addStoryButton2.Size = new System.Drawing.Size(108, 38);
+            this.addStoryButton2.Size = new System.Drawing.Size(81, 31);
             this.addStoryButton2.TabIndex = 11;
             this.addStoryButton2.Text = "AddStory";
             this.addStoryButton2.UseVisualStyleBackColor = true;
+            this.addStoryButton2.Click += new System.EventHandler(this.addStoryButton2_Click);
             // 
             // storyTextBox1
             // 
-            this.storyTextBox1.Location = new System.Drawing.Point(159, 468);
+            this.storyTextBox1.Location = new System.Drawing.Point(119, 380);
+            this.storyTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.storyTextBox1.Name = "storyTextBox1";
-            this.storyTextBox1.Size = new System.Drawing.Size(330, 22);
+            this.storyTextBox1.Size = new System.Drawing.Size(248, 20);
             this.storyTextBox1.TabIndex = 12;
             // 
             // storyTextBox2
             // 
-            this.storyTextBox2.Location = new System.Drawing.Point(637, 468);
+            this.storyTextBox2.Location = new System.Drawing.Point(518, 380);
+            this.storyTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.storyTextBox2.Name = "storyTextBox2";
-            this.storyTextBox2.Size = new System.Drawing.Size(319, 22);
+            this.storyTextBox2.Size = new System.Drawing.Size(240, 20);
             this.storyTextBox2.TabIndex = 13;
             this.storyTextBox2.TextChanged += new System.EventHandler(this.storyTextBox2_TextChanged);
             // 
@@ -215,9 +243,10 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.userNameLabel.AutoSize = true;
             this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameLabel.Location = new System.Drawing.Point(494, 9);
+            this.userNameLabel.Location = new System.Drawing.Point(370, 7);
+            this.userNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userNameLabel.Name = "userNameLabel";
-            this.userNameLabel.Size = new System.Drawing.Size(94, 20);
+            this.userNameLabel.Size = new System.Drawing.Size(81, 17);
             this.userNameLabel.TabIndex = 14;
             this.userNameLabel.Text = "Username";
             // 
@@ -225,9 +254,10 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.userIdLabel.AutoSize = true;
             this.userIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userIdLabel.Location = new System.Drawing.Point(615, 9);
+            this.userIdLabel.Location = new System.Drawing.Point(461, 7);
+            this.userIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userIdLabel.Name = "userIdLabel";
-            this.userIdLabel.Size = new System.Drawing.Size(94, 20);
+            this.userIdLabel.Size = new System.Drawing.Size(81, 17);
             this.userIdLabel.TabIndex = 15;
             this.userIdLabel.Text = "Username";
             // 
@@ -235,38 +265,44 @@ namespace DigitalPhotoDiary.PresentationLayer
             // 
             this.eventIdLabel.AutoSize = true;
             this.eventIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventIdLabel.Location = new System.Drawing.Point(258, 50);
+            this.eventIdLabel.Location = new System.Drawing.Point(195, 24);
+            this.eventIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.eventIdLabel.Name = "eventIdLabel";
-            this.eventIdLabel.Size = new System.Drawing.Size(59, 20);
+            this.eventIdLabel.Size = new System.Drawing.Size(52, 17);
             this.eventIdLabel.TabIndex = 16;
             this.eventIdLabel.Text = "label1";
             // 
             // updatePhotoButton1
             // 
             this.updatePhotoButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updatePhotoButton1.Location = new System.Drawing.Point(27, 432);
+            this.updatePhotoButton1.Location = new System.Drawing.Point(20, 351);
+            this.updatePhotoButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.updatePhotoButton1.Name = "updatePhotoButton1";
-            this.updatePhotoButton1.Size = new System.Drawing.Size(109, 38);
+            this.updatePhotoButton1.Size = new System.Drawing.Size(82, 31);
             this.updatePhotoButton1.TabIndex = 17;
             this.updatePhotoButton1.Text = "Update";
             this.updatePhotoButton1.UseVisualStyleBackColor = true;
+            this.updatePhotoButton1.Click += new System.EventHandler(this.updatePhotoButton1_Click);
             // 
             // updatePhotoButton2
             // 
             this.updatePhotoButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updatePhotoButton2.Location = new System.Drawing.Point(986, 423);
+            this.updatePhotoButton2.Location = new System.Drawing.Point(782, 344);
+            this.updatePhotoButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.updatePhotoButton2.Name = "updatePhotoButton2";
-            this.updatePhotoButton2.Size = new System.Drawing.Size(111, 38);
+            this.updatePhotoButton2.Size = new System.Drawing.Size(83, 31);
             this.updatePhotoButton2.TabIndex = 18;
             this.updatePhotoButton2.Text = "Update";
             this.updatePhotoButton2.UseVisualStyleBackColor = true;
+            this.updatePhotoButton2.Click += new System.EventHandler(this.updatePhotoButton2_Click);
             // 
             // updateStoryButton1
             // 
             this.updateStoryButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateStoryButton1.Location = new System.Drawing.Point(229, 507);
+            this.updateStoryButton1.Location = new System.Drawing.Point(172, 412);
+            this.updateStoryButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.updateStoryButton1.Name = "updateStoryButton1";
-            this.updateStoryButton1.Size = new System.Drawing.Size(100, 38);
+            this.updateStoryButton1.Size = new System.Drawing.Size(75, 31);
             this.updateStoryButton1.TabIndex = 19;
             this.updateStoryButton1.Text = "Update";
             this.updateStoryButton1.UseVisualStyleBackColor = true;
@@ -274,18 +310,69 @@ namespace DigitalPhotoDiary.PresentationLayer
             // updateStoryButton2
             // 
             this.updateStoryButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateStoryButton2.Location = new System.Drawing.Point(829, 507);
+            this.updateStoryButton2.Location = new System.Drawing.Point(660, 412);
+            this.updateStoryButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.updateStoryButton2.Name = "updateStoryButton2";
-            this.updateStoryButton2.Size = new System.Drawing.Size(100, 38);
+            this.updateStoryButton2.Size = new System.Drawing.Size(75, 31);
             this.updateStoryButton2.TabIndex = 20;
             this.updateStoryButton2.Text = "Update";
             this.updateStoryButton2.UseVisualStyleBackColor = true;
             // 
+            // browseButton
+            // 
+            this.browseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.browseButton.Location = new System.Drawing.Point(11, 273);
+            this.browseButton.Margin = new System.Windows.Forms.Padding(2);
+            this.browseButton.Name = "browseButton";
+            this.browseButton.Size = new System.Drawing.Size(81, 31);
+            this.browseButton.TabIndex = 21;
+            this.browseButton.Text = "Browse";
+            this.browseButton.UseVisualStyleBackColor = true;
+            this.browseButton.Click += new System.EventHandler(this.browseButton_Click);
+            // 
+            // browseButton2
+            // 
+            this.browseButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.browseButton2.Location = new System.Drawing.Point(809, 264);
+            this.browseButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.browseButton2.Name = "browseButton2";
+            this.browseButton2.Size = new System.Drawing.Size(81, 31);
+            this.browseButton2.TabIndex = 22;
+            this.browseButton2.Text = "Browse";
+            this.browseButton2.UseVisualStyleBackColor = true;
+            this.browseButton2.Click += new System.EventHandler(this.browseButton2_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pathTextBox1
+            // 
+            this.pathTextBox1.Location = new System.Drawing.Point(126, 284);
+            this.pathTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pathTextBox1.Name = "pathTextBox1";
+            this.pathTextBox1.ReadOnly = true;
+            this.pathTextBox1.Size = new System.Drawing.Size(248, 20);
+            this.pathTextBox1.TabIndex = 23;
+            // 
+            // pathTextBox2
+            // 
+            this.pathTextBox2.Location = new System.Drawing.Point(509, 284);
+            this.pathTextBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pathTextBox2.Name = "pathTextBox2";
+            this.pathTextBox2.ReadOnly = true;
+            this.pathTextBox2.Size = new System.Drawing.Size(248, 20);
+            this.pathTextBox2.TabIndex = 24;
+            // 
             // EventDisplayPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1140, 608);
+            this.ClientSize = new System.Drawing.Size(901, 494);
+            this.Controls.Add(this.pathTextBox2);
+            this.Controls.Add(this.pathTextBox1);
+            this.Controls.Add(this.browseButton2);
+            this.Controls.Add(this.browseButton);
             this.Controls.Add(this.updateStoryButton2);
             this.Controls.Add(this.updateStoryButton1);
             this.Controls.Add(this.updatePhotoButton2);
@@ -307,6 +394,7 @@ namespace DigitalPhotoDiary.PresentationLayer
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.homeBackButton);
             this.Controls.Add(this.eventNameLabel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EventDisplayPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventDisplayPanel";
@@ -348,5 +436,10 @@ namespace DigitalPhotoDiary.PresentationLayer
         private System.Windows.Forms.Button updatePhotoButton2;
         private System.Windows.Forms.Button updateStoryButton1;
         private System.Windows.Forms.Button updateStoryButton2;
+        private System.Windows.Forms.Button browseButton;
+        private System.Windows.Forms.Button browseButton2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox pathTextBox1;
+        private System.Windows.Forms.TextBox pathTextBox2;
     }
 }
